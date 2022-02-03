@@ -1,4 +1,16 @@
 body {
-    background-color: #9d2323;
+    background-color: #292727;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.singleImg {
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    border-radius: 100%;
+}
+
+.singleImg:hover {
+    transform: scale(110%);
 }
