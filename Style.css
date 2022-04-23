@@ -1,0 +1,18 @@
+body {
+    background: url('https://media3.giphy.com/media/21PeokB8uIQvjIhVO5/giphy.gif') no-repeat center center fixed; 
+    background-size: cover;
+   } 
+   
+   p { 
+    color: red;
+   }
+   
+   #ExampleDiv1 { 
+     border: 1px solid rgb(5, 3, 3)
+   }
+   #footer {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 3px;
+    left: 6px;
+    }
