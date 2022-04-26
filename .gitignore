@@ -2,6 +2,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+### Rondell's Git Ignore ###
+# rwi files, basically just text-documents saved in project folder.
+*.rwi
+
+# rwiJS files, these are Javascript Files with .rwiJS suffix.
+# these aren't required files to have so it won't affect how the app runs without them.
+*.rwiJS
+
 ### Node ###
 # Logs
 logs
