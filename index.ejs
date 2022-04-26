@@ -9,7 +9,6 @@
   </head>
   <body>
     <div id="navbar">
-    <img src="https://a.deviantart.net/avatars/l/i/lightknightz.png?2" alt=""> 
       <a href="#home">Home</a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
@@ -18,12 +17,16 @@
     <img src="https://i.ibb.co/s9hmzJg/7e3d7119b459eff971475b9e8555e260.png" 
     id="img1" alt="">
     <form id="frm1" action="/action_page.php" style=>
+      <strong>Create your WoW account</strong>
+      <hr>
+      <label for='accName'>Username:</label><br>
+      <input id="accName" type="text" name="accName" /><br><br>
+      <label for='accPass'>Password:</label><br>
+      <input id='accPass' type="password" name="accPass" required/><br><br>
+      <label for='accEmail'>Account Email:</label><br>
+      <input id='accEmail' type="email" name="accEmail" required/><br><br>
 
-      Account Name: <input type="text" name="fname" /><br />
-      Account Password: <input type="text" name="lname" required/><br /><br />
-      Email: <input type="text" name="Email" required/><br /><br />
-
-      <input type="button" onclick="myFunction()" value="Register" />
+      <input id='submit' type="button" onclick="submitAccount()" value="Register" />
     </form>
 
     <div id="footer">
@@ -46,6 +49,7 @@
           width="750" height="400"             
         ></iframe>
   </body>
+  <%- include('script') %>
 </html>
 <script type="text/javascript"> 
 
