@@ -4,26 +4,33 @@ var bodyParser = require("body-parser");
 
 const app = express();
 
-app.set('view engine','ejs'); 
+app.set('view engine', 'ejs');
 app.engine('ejs', require('ejs').__express);
 
 app.get('/', function (req, res) {
-    res.render(__dirname + '/index', {
+    res.render(__dirname + '/index', { //Requires the auth0 wow login i think to register?
         title: 'RSA-WOW'
-    }); 
+    });
 });
 app.get('/news', function (req, res) {
-        res.render(__dirname + '/news', {
-            title: 'RSA-WOW'
-        }); 
-});
-app.get('/info', function (req, res) {
-    res.render(__dirname + '/info', {
+    res.render(__dirname + '/news', { //Database not yet set up 100%
         title: 'RSA-WOW'
-    }); 
+    });
+});
+app.get('/about-us', function (req, res) {
+    res.render(__dirname + '/about-us', { //About us = /Info. I could not set that to about us with a space. Will Require @Rondell to finish that part.
+        title: 'RSA-WOW'
+    });
+});
+app.get('/contact-us', function (req, res) {
+    res.render(__dirname + '/contact-us', { //About us = /Info. I could not set that to about us with a space. Will Require @Rondell to finish that part.
+        title: 'RSA-WOW'
+    });
 });
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var urlencodedParser = bodyParser.urlencoded({
+    extended: false
+});
 
 
 app.get('/api/news', urlencodedParser, function (req, res) {
@@ -32,39 +39,39 @@ app.get('/api/news', urlencodedParser, function (req, res) {
         user: 'root',
         password: 'rsadatabase2022',
         database: 'rsadatabase'
-      })
-    
+    })
+
     connection.connect();
 
     connection.query('SELECT * FROM wownews', (error, results, fields) => {
-        if(error){
+        if (error) {
             res.status(500).send(`500 Internal Service Error (MySQL) : ${error.message}`)
             return;
         }
 
-        if(results){
+        if (results) {
             res.status(200).send(results);
         }
     })
 })
 
-app.post('/api/news/post',urlencodedParser, function (req, res) {
+app.post('/api/news/post', urlencodedParser, function (req, res) {
     var connection = mysql.createConnection({
         host: '45.11.89.210',
         user: 'root',
         password: 'rsadatabase2022',
         database: 'rsadatabase'
-      })
-    
+    })
+
     connection.connect();
 
     connection.query(`INSERT INTO wownews(title, content, author) VALUES ('${req.body.name}','${req.body.content}','${req.body.author}')`, (error, results, fields) => {
-        if(error){
+        if (error) {
             res.status(500).send(`500 Internal Service Error (MySQL) : ${error.message}`)
             return;
         }
 
-        if(results){
+        if (results) {
             res.status(200).send(results);
         }
     })

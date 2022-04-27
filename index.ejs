@@ -2,31 +2,31 @@
 <html lang="en">
 <%- include('header') %>
 
-  <body>
-    <div class='container'>
-      <form id="frm1" action="/action_page.php" style=>
-        <strong>Create your WoW account</strong>
-        <hr>
-        <label for='accName'>Username:</label><br>
-        <input class='form-control' id="accName" type="text" name="accName" /><br>
-        <label for='accPass'>Password:</label><br>
-        <input class='form-control' id='accPass' type="password" name="accPass" required /><br>
-        <label for='accEmail'>Account Email:</label><br>
-        <input class='form-control' id='accEmail' type="email" name="accEmail" required /><br>
-  
-        <input class='btn btn-primary' id='submit' type="button" onclick="submitAccount()" value="Register" />
-      </form>
-  
-      <%- include('script') %>
-      <%- include('footer') %>
+<body>
+  <div class='container'>
+    <form id="frm1" action="/action_page.php" style=>
+      <strong>Create your WoW account</strong>
+      <hr>
+      <label for='accName'>Username:</label><br>
+      <input class='form-control' id="accName" type="text" name="accName" /><br>
+      <label for='accPass'>Password:</label><br>
+      <input class='form-control' id='accPass' type="password" name="accPass" required /><br>
+      <label for='accEmail'>Account Email:</label><br>
+      <input class='form-control' id='accEmail' type="email" name="accEmail" required /><br>
 
-    </div>    
-  </body>
+      <input class='btn btn-primary' id='submit' type="button" onclick="submitAccount()" value="Register" />
+    </form>
+
+    <%- include('script') %>
+    <%- include('footer') %>
+
+  </div>
+</body>
 
 </html>
 <script type="text/javascript">
-
-// Video player https://www.npmjs.com/package/plyr
-
-</script> 
-<iframe id='player' src="https://www.youtube.com/embed/BCr7y4SLhck?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay" width="750" height="400"></iframe>
+  // Video player https://www.npmjs.com/package/plyr
+</script>
+<iframe id='player'
+  src="https://www.youtube.com/embed/BCr7y4SLhck?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+  allowfullscreen allowtransparency allow="autoplay" width="750" height="400"></iframe>
