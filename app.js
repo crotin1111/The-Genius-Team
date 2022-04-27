@@ -17,6 +17,11 @@ app.get('/news', function (req, res) {
             title: 'RSA-WOW'
         }); 
 });
+app.get('/info', function (req, res) {
+    res.render(__dirname + '/info', {
+        title: 'RSA-WOW'
+    }); 
+});
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
