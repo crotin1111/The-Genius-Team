@@ -25,7 +25,18 @@
     </select><br>
     <button class="btn btn-primary" onclick="sendNews()">Submit</button>
     <br><br>
-    <div id="news"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <strong class="display-5">News</strong>
+          <hr>
+          <div id="news"></div>
+        </div>
+        <div class="col">
+          [Changelog Would Appear Here]
+        </div>
+      </div>
+    </div>
 
   </div>
 </body>
@@ -72,9 +83,8 @@
   }
 
   function sendNews() {
-    let title = document.querySelector('#threadTitle');
-    let content = document.querySelector('#threadText');
-    // let author = document.querySelector('#threadAuthor');
+    let threadName = document.getElementById("threadTitle").value;
+    let threadText = document.getElementById("threadText").value;
 
     let xhr = new XMLHttpRequest();
     let url = "/api/news/post";
@@ -99,13 +109,9 @@
       }
     }
 
-    data = [{
-      name: title,
-      content: content,
-      author: "Example"
-    }]
+    var data = [{ 'name' : threadName, 'content' : threadText, 'author' : 'example' }];
 
-    xhr.send(data);
+    xhr.send(JSON.stringify(data));
   }
 </script>
 <%- include('footer') %>
