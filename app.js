@@ -23,8 +23,8 @@ app.get('/about-us', function (req, res) {
     });
 });
 app.get('/contact-us', function (req, res) {
-    res.render(__dirname + '/contact-us', { //About us = /Info. I could not set that to about us with a space. Will Require @Rondell to finish that part.
-        title: 'RSA-WOW'
+    res.render(__dirname + '/contact-us', { //requires = Form via database
+        title: 'RSA-WOW' 
     });
 });
 
