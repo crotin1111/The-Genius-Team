@@ -4,4 +4,10 @@
     form.addEventListener('onsubmit', e => {
         e.preventDefault();
     })
+
+    document.addEventListener('resize', function(event) {
+        var w = document.innerWidth;
+        var h = document.innerHeight;
+        console.log(`${w}x${h}`)
+    }, true);
 </script>
